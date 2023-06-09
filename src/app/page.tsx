@@ -1,3 +1,4 @@
+import { TodoItem } from "@/components/TodoItem";
 import { prisma } from "@/db";
 import Link from "next/link";
 
@@ -20,7 +21,7 @@ export default async function Home() {
       </header>
       <ul className="pl-4">
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
+          <TodoItem key={todo.id} {...todo}/>
         ))}
       </ul>
     </>
