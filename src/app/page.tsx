@@ -1,10 +1,18 @@
 import { TodoItem } from "@/components/TodoItem";
 import { prisma } from "@/db";
 import Link from "next/link";
+// import { redirect } from "next/navigation";
 
 function getTodos() {
   return prisma.todo.findMany();
 }
+
+async function toggleTodo(id: string, complete: boolean) {
+  "use server";
+  await prisma.todo.update({ where: { id }, data: { complete } });
+  // redirect("") -> cannot perform a redirect in this server action
+}
+
 export default async function Home() {
   const todos = await getTodos();
   // await prisma.todo.create({data: {title: "test", complete:false}})
@@ -21,7 +29,7 @@ export default async function Home() {
       </header>
       <ul className="pl-4">
         {todos.map((todo) => (
-          <TodoItem key={todo.id} {...todo}/>
+          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
         ))}
       </ul>
     </>
