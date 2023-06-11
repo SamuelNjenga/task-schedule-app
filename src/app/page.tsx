@@ -1,10 +1,15 @@
 import { TodoItem } from "@/components/TodoItem";
+// import { redirect } from "next/navigation";
+import { UserItem } from "@/components/UserItem";
 import { prisma } from "@/db";
 import Link from "next/link";
-// import { redirect } from "next/navigation";
 
 function getTodos() {
   return prisma.todo.findMany();
+}
+
+function getUsers() {
+  return prisma.user.findMany();
 }
 
 async function toggleTodo(id: string, complete: boolean) {
@@ -15,6 +20,8 @@ async function toggleTodo(id: string, complete: boolean) {
 
 export default async function Home() {
   const todos = await getTodos();
+  const users = await getUsers();
+
   // await prisma.todo.create({data: {title: "test", complete:false}})
   return (
     <>
@@ -24,12 +31,25 @@ export default async function Home() {
           className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
           href="/new"
         >
-          New
+          Tasks
+        </Link>
+        <Link
+          className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
+          href="/users"
+        >
+          Users
         </Link>
       </header>
+      <h3>Tasks</h3>
       <ul className="pl-4">
         {todos.map((todo) => (
           <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
+        ))}
+      </ul>
+      <h3>Users</h3>
+      <ul className="pl-4">
+        {users.map((user) => (
+          <UserItem key={user.id} {...user} />
         ))}
       </ul>
     </>

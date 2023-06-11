@@ -11,9 +11,18 @@ datasource db {
 }
 
 model Todo {
-  id          String   @id @default(uuid())
-  title       String
-  complete    Boolean
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id              String   @id @default(uuid())
+  title           String
+  complete        Boolean
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model User {
+  id              Int      @id @default(autoincrement())
+  firstName       String
+  lastName        String
+  email           String   @unique
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
