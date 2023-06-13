@@ -22,7 +22,7 @@ async function createUser(data: FormData) {
 
   await prisma.user.create({ data: { firstName, lastName, email } });
 
-  redirect("/");
+  redirect("/users/registration");
 }
 export default function Page() {
   return (
