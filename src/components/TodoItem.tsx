@@ -1,4 +1,5 @@
 "use client";
+import { Raleway } from "next/font/google";
 
 type TodoItemProps = {
   id: string;
@@ -6,6 +7,12 @@ type TodoItemProps = {
   complete: boolean;
   toggleTodo: (id: string, complete: boolean) => void;
 };
+
+const raleway = Raleway({
+  weight: "500",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export function TodoItem({ id, title, complete, toggleTodo }: TodoItemProps) {
   return (
@@ -21,7 +28,7 @@ export function TodoItem({ id, title, complete, toggleTodo }: TodoItemProps) {
         htmlFor={id}
         className="cursor-pointer peer-checked:line-through peer-checked:text-slate-500"
       >
-        {title}
+        <h4 className={raleway.className}>{title}</h4>
       </label>
     </li>
   );
