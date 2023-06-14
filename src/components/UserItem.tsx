@@ -1,4 +1,5 @@
 // "use client";
+import { Raleway } from "next/font/google";
 
 type UserItemProps = {
   firstName: string;
@@ -6,12 +7,18 @@ type UserItemProps = {
   email: string;
 };
 
+const raleway = Raleway({
+  weight: "500",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export function UserItem({ firstName, lastName, email }: UserItemProps) {
   return (
     <li className="flex gap-1 items-center">
-      <h4>{firstName}</h4>
-      <h4>{lastName}</h4>
-      <h4>{email}</h4>
+      <h4 className={raleway.className}>{firstName}</h4>
+      <h4 className={raleway.className}>{lastName}</h4>
+      <h4 className={raleway.className}>{email}</h4>
     </li>
   );
 }
