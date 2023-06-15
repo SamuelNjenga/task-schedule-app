@@ -1,5 +1,12 @@
+import { Rubik } from "next/font/google";
 import React from "react";
 import { API_BASE_URL } from "./../../constants/index";
+
+const rubik = Rubik({
+  weight: "500",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 interface Post {
   id: number;
@@ -17,7 +24,7 @@ async function PostsList() {
   return (
     <>
       {posts.map((post) => (
-        <p key={post.id}>
+        <p key={post.id} className={rubik.className}>
           Post: {post.id} {post.title}
         </p>
       ))}
