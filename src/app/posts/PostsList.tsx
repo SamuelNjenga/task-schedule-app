@@ -1,4 +1,5 @@
 import { Rubik } from "next/font/google";
+import Link from "next/link";
 import React from "react";
 import { API_BASE_URL } from "./../../constants/index";
 
@@ -28,6 +29,11 @@ async function PostsList() {
           Post: {post.id} {post.title}
         </p>
       ))}
+      <Link href="">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-2 rounded">
+          Go To Homepage
+        </button>
+      </Link>
     </>
   );
 }
