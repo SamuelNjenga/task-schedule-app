@@ -1,5 +1,10 @@
-import React from 'react'
-import PostsList from './PostsList'
+import { Metadata } from "next";
+import React from 'react';
+import PostsList from './PostsList';
+
+export const metadata: Metadata = {
+  title: "Posts",
+};
 
 const Posts = () => {
   return (
