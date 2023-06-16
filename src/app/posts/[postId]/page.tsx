@@ -2,6 +2,17 @@ import { API_BASE_URL } from "@/constants";
 import { notFound } from "next/navigation";
 import React from "react";
 
+interface Post {
+  id: number;
+  title: string;
+}
+
+export async function generateStaticParams() {
+  const data = await fetch(`${API_BASE_URL}posts/`);
+  const res = await data.json();
+  return res.map((post: Post) => ({ post: post.id }));
+}
+
 const fetchPost = async (postId: number) => {
   const res = await fetch(`${API_BASE_URL}posts/${postId}`);
   const post = await res.json();
