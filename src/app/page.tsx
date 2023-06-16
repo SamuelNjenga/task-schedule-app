@@ -1,3 +1,4 @@
+import ClockTime from "@/components/ClockTime";
 import { TodoItem } from "@/components/TodoItem";
 // import { redirect } from "next/navigation";
 import { UserItem } from "@/components/UserItem";
@@ -58,6 +59,7 @@ export default async function Home() {
           <UserItem key={user.id} {...user} />
         ))}
       </ul>
+      <ClockTime />
     </>
   );
 }
