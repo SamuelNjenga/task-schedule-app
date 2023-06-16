@@ -26,7 +26,9 @@ async function PostsList() {
     <>
       {posts.map((post) => (
         <p key={post.id} className={rubik.className}>
-          Post: {post.id} {post.title}
+          <Link href={`/posts/${post.id}`}>
+            Post: {post.id} {post.title}
+          </Link>
         </p>
       ))}
       <Link href="">
