@@ -1,4 +1,5 @@
 import ClockTime from "@/components/ClockTime";
+import TaskImage from "@/components/TaskImage";
 import { TodoItem } from "@/components/TodoItem";
 // import { redirect } from "next/navigation";
 import { UserItem } from "@/components/UserItem";
@@ -60,6 +61,7 @@ export default async function Home() {
         ))}
       </ul>
       <ClockTime />
+      <TaskImage />
     </>
   );
 }
