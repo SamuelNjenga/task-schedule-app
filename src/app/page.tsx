@@ -47,6 +47,12 @@ export default async function Home() {
         >
           Posts
         </Link>
+        <Link
+          className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
+          href="/tweets"
+        >
+          Tweets
+        </Link>
       </header>
       <h3>Tasks</h3>
       <ul className="pl-4">
