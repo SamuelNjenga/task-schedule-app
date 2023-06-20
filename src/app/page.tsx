@@ -5,6 +5,7 @@ import { TodoItem } from "@/components/TodoItem";
 import { UserItem } from "@/components/UserItem";
 import { prisma } from "@/db";
 import Link from "next/link";
+import Footer from "./../components/Footer";
 
 function getTodos() {
   return prisma.todo.findMany();
@@ -74,6 +75,9 @@ export default async function Home() {
       </ul>
       <ClockTime />
       <TaskImage />
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
