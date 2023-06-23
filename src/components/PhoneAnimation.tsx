@@ -6,7 +6,7 @@ import animationData from "../../public/assets/phone-animation.json";
 const PhoneAnimation = () => {
   const phoneRef = useRef<LottieRefCurrentProps>(null);
   return (
-    <div>
+    <div className="w-64">
       <Lottie
         animationData={animationData}
         lottieRef={phoneRef}
@@ -17,7 +17,6 @@ const PhoneAnimation = () => {
           //   phoneRef.current?.play();
         }}
         //   loop={false}
-        loop={false}
       />
     </div>
   );
