@@ -67,13 +67,17 @@ export default async function Home() {
           Animations
         </Link>
       </header>
-      <h3>Tasks</h3>
+      <h3 className="font-sans text-lg font-medium text-sky-400/75 underline decoration-pink-500/30">
+        Tasks
+      </h3>
       <ul className="pl-4">
         {todos.map((todo) => (
           <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
         ))}
       </ul>
-      <h3>Users</h3>
+      <h3 className="font-sans text-lg font-medium text-sky-400/75 underline decoration-pink-500/30">
+        Users
+      </h3>
       <ul className="pl-4">
         {users.map((user) => (
           <UserItem key={user.id} {...user} />
