@@ -66,6 +66,12 @@ export default async function Home() {
         >
           Animations
         </Link>
+        <Link
+          className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
+          href="/counter"
+        >
+          Counter
+        </Link>
       </header>
       <h3 className="font-sans text-lg font-medium text-sky-400/75 underline decoration-pink-500/30">
         Tasks
