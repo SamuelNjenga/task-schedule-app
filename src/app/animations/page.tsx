@@ -1,3 +1,4 @@
+import DancerAnimation from "@/components/DancerAnimation";
 import PhoneAnimation from "@/components/PhoneAnimation";
 import WalkerAnimation from "@/components/WalkerAnimation";
 import { Lora } from "next/font/google";
@@ -17,6 +18,8 @@ const PhonePage = () => {
       <PhoneAnimation />
       <br />
       <WalkerAnimation />
+      <br />
+      <DancerAnimation />
       <Link href="">
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-2 rounded">
           Go To Homepage
